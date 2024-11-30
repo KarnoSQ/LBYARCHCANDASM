@@ -5,9 +5,6 @@
 
 extern void imgCvtGrayInttoFloat(int* intImage, float* floatImage, int height, int width);
 
-long calculate_nanoseconds(struct timespec start, struct timespec end) {
-    return (end.tv_sec - start.tv_sec) * 1000000000L + (end.tv_nsec - start.tv_nsec);
-}
 
 int main() {
     int height, width;
@@ -26,18 +23,17 @@ int main() {
     }
 
     // Measure the total runtime for the C program
-    struct timespec c_start, c_end;
-    clock_gettime(CLOCK_MONOTONIC, &c_start);
-
+    clock_t c_start, c_end;
+    c_start = clock();
     // Allocate memory for output
     float* floatImage = (float*)malloc(height * width * sizeof(float));
 
     // Assembly Conversion
     // Measure the runtime for the x86-64 assembly function
-    struct timespec asm_start, asm_end;
-    clock_gettime(CLOCK_MONOTONIC, &asm_start);
+    clock_t asm_start, asm_end;
+    asm_start = clock();
     imgCvtGrayInttoFloat(intImage, floatImage, height, width);
-    clock_gettime(CLOCK_MONOTONIC, &asm_end);
+    asm_end = clock();
 
     // Print new converted values
     printf("Converted float image:\n");
@@ -48,11 +44,11 @@ int main() {
         printf("\n");
     }
 
-    clock_gettime(CLOCK_MONOTONIC, &c_end);
+    c_end = clock();
 
     // Compute runtimes in nanoseconds
-    long asm_runtime_ns = calculate_nanoseconds(asm_start, asm_end);
-    long c_runtime_ns = calculate_nanoseconds(c_start, c_end);
+    long asm_runtime_ns = (long)((asm_end - asm_start) * 1000000000.0 / CLOCKS_PER_SEC);
+    long c_runtime_ns = (long)((c_end - c_start) * 1000000000.0 / CLOCKS_PER_SEC);
 
     // Print the runtimes in nanoseconds
     printf("x86-64 assembly function runtime: %ld nanoseconds\n", asm_runtime_ns);
