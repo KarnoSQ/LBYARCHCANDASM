@@ -11,12 +11,12 @@ The implementation includes performance benchmarking and correctness verificatio
 <h3>Project Structure</h3>
 <hr>
 C Program (ConvertImageC.c):
-Collects input, and creates dynamic array.
-Measures execution time for benchmarking.
+- Collects input, and creates dynamic array.
+- Measures execution time for benchmarking.
 
 Assembly Function (ConvertImageAsm.asm):
-Handles conversion of int pixels to float.
-Handles division of input
+- Handles conversion of int pixels to float.
+- Handles division of input
 
 <h3>Performance Analysis</h3>
 <hr>
