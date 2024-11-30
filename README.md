@@ -31,9 +31,9 @@ Runtimes were measured for different image sizes (height × width):
 - The results for the average Runtimes are as follows:
 
 Image Size | Avg x86-64 Runtime (ns) | Avg Total C Runtime (ns)
-- 10×10 | 400 nanoseconds | 2364600 nanoseconds
-- 100×100 | 46060 nanoseconds | 242228120 nanoseconds
-- 1000×1000 | 3946720 nanoseconds | 1185548940 nanoseconds
+- 10×10 | 
+- 100×100 | 
+- 1000×1000 | 
 <h3>Analysis:</h3>
 <hr>
 
