@@ -34,7 +34,11 @@ Image Size | Avg x86-64 Runtime (ns) | Avg Total C Runtime (ns)
 - 10×10 | 450 nanoseconds | 2364600 nanoseconds
 - 100×100 | 46060 nanoseconds | 242228120 nanoseconds
 - 1000×1000 | 394680 nanoseconds | 1185548940 nanoseconds
+
+Testing by John Wayne
 <h3>Analysis:</h3>
 <hr>
 
-Each size were runned 30 times and computed to form the average execution time. In our Testing, its run time was consistently much faster as compared to the average run time for the C code. Additionally, upon running each scenario multiple times, we noticed that there was little to no fluctuation between each of the runtimes of each program. The runtimes would proportionally increase as we image size also did. An interesting observation we encountered was that the Runtime would significantly differ when running the program on better devices, highlighting the effects of having slightly different hardware to improve performance.
+Each size were runned 30 times and computed to form the average execution time. In our testing, its run time was consistently much faster as compared to the average run time for the C code. Additionally, upon running each scenario multiple times, we noticed that there was little to no fluctuation between each of the runtimes of each program. The runtime would proportionally increase as we image size also did. An interesting observation we encountered was that the Runtime would significantly differ when running the program on better devices, highlighting the effects of having slightly different hardware to improve performance.
+
+Demo by Carlo San Buenaventura: https://drive.google.com/file/d/1mwFEAVj63Iw5S120Rd_asyde4aYJFbEm/view?usp=drive_link
